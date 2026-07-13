@@ -3,6 +3,7 @@
 name: event-workflow
 on:
     - push
+    - workflow_dispatch
 
 jobs:
         print-event-name:
