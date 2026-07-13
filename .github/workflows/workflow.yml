@@ -1,0 +1,16 @@
+name: basic-workflow
+on: 
+  - push
+  - workflow_dispatch
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello Job
+        run: echo "hello, from hello-job"
+  bye-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bye Job
+        run: echo "bye, from bye-job"
