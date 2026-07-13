@@ -1,3 +1,5 @@
+# This GitHub Actions workflow prints messages and demonstrates accessing the event name.
+# It runs on push events and displays the trigger information.
 name: event-workflow
 on:
     - push

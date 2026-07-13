@@ -1,42 +1,42 @@
-# This GitHub# Workflow: basic-workflow
-# This GitHub Actions workflow demonstrates handling of step exit codes.
-# It shows how exit codes (0, 1) affect step execution and job outcomes.
-# Jobs run in parallel by default; use `needs` to define dependencies.
+# # This GitHub# Workflow: basic-workflow
+# # This GitHub Actions workflow demonstrates handling of step exit codes.
+# # It shows how exit codes (0, 1) affect step execution and job outcomes.
+# # Jobs run in parallel by default; use `needs` to define dependencies.
 
-name: basic-workflow
-on:
-  - push
-  - workflow_dispatch
+# name: basic-workflow
+# on:
+#   - push
+#   - workflow_dispatch
 
-jobs:
-  hello-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hello Job
-        run: echo "hello, from hello-job"
+# jobs:
+#   hello-job:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Hello Job
+#         run: echo "hello, from hello-job"
 
-  exit-job:
-    runs-on: ubuntu-latest
-    steps:
-# This step exits with code 0 (success), so the next step will run
-      - name: return exit 0 Job
-        run: |
-          echo "returning exit 0"
-          exit 0
-      # Runs because previous step succeeded (exit code 0)
-      - name: post return 0 job
-        run: echo "After return 0 -message"
-      # This step exits with code 1 (failure). By default, the job stops and the next step is skipped.
-      - name: return exit 1 Job
-        run: |
-          echo "returning exit 1"
-          exit 1
-      # The following step will NOT run unless `continue-on-error: true` is set on the previous step
-      - name: post return 1 job
-        run: echo "After return 1 -message"
+#   exit-job:
+#     runs-on: ubuntu-latest
+#     steps:
+# # This step exits with code 0 (success), so the next step will run
+#       - name: return exit 0 Job
+#         run: |
+#           echo "returning exit 0"
+#           exit 0
+#       # Runs because previous step succeeded (exit code 0)
+#       - name: post return 0 job
+#         run: echo "After return 0 -message"
+#       # This step exits with code 1 (failure). By default, the job stops and the next step is skipped.
+#       - name: return exit 1 Job
+#         run: |
+#           echo "returning exit 1"
+#           exit 1
+#       # The following step will NOT run unless `continue-on-error: true` is set on the previous step
+#       - name: post return 1 job
+#         run: echo "After return 1 -message"
 
-  bye-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Bye Job
-        run: echo "bye, from bye-job"
+#   bye-job:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Bye Job
+#         run: echo "bye, from bye-job"
