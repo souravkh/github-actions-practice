@@ -1,0 +1,20 @@
+# Array of string
+color:
+  -red
+  -green
+  -blue
+
+# Array of multiple datatype
+multi_data_type_array:
+  -red
+  -10
+  -true
+  -yellow
+
+
+#  Array of object 
+persons:
+  - name: Yash
+    age: 29
+  - name: dhwani
+    age: 25
